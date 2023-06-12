@@ -1,8 +1,8 @@
 const fs = require('fs');
-const config = require('..\\config');
+const config = require('../config');
 const readFile = (name) =>
   fs.readFileSync(`${config.FILE_PATH}${name}`, 'utf-8');
-const usersData = readFile('\\users.json');
+const usersData = readFile('/users.json');
 const users = JSON.parse(usersData);
 exports.getAllUsers = (req, res) => {
   return res.status(200).json({

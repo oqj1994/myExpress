@@ -1,1 +1,1 @@
-exports.FILE_PATH = `${__dirname}\\dev-data\\data\\`;
+exports.FILE_PATH = `${__dirname}/dev-data/data/`;
