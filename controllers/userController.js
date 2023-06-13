@@ -1,11 +1,12 @@
 const fs = require('fs');
 const config = require('../config');
+
 const readFile = (name) =>
   fs.readFileSync(`${config.FILE_PATH}${name}`, 'utf-8');
 const usersData = readFile('/users.json');
 const users = JSON.parse(usersData);
-exports.getAllUsers = (req, res) => {
-  return res.status(200).json({
+exports.getAllUsers = (req, res) =>
+  res.status(200).json({
     status: 'success',
     requestTime: req.requestTime,
     result: users.length,
@@ -13,7 +14,6 @@ exports.getAllUsers = (req, res) => {
       users,
     },
   });
-};
 
 exports.createUser = (req, res) => {
   res.status(500).json({
