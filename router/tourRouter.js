@@ -20,6 +20,11 @@ const router = express.Router();
 //   .route('/')
 //   .get(tourController.getAllTours)
 //   .post(tourController.checkBody(tourController.createTour));
+router.route('/tours-stats').get(tourController.getTourStats);
+router.route('/monthly-plan/:year').get(tourController.getMonthPlan);
+router
+  .route('/top-5-cheap')
+  .get(tourController.aliasTopTours, tourController.getAllTours);
 router
   .route('/')
   .get(tourController.getAllTours)
